@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Playfair';
+  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf')
+    format('woff');
+}
+
+@font-face {
+  font-family: 'PlayfairItalic';
+  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf')
+    format('woff');
+}
+
+@font-face {
+  font-family: 'PlayfairBold';
+  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf')
+    format('woff');
+}
+
+@mixin Playfair {
+  font-family: 'Playfair';
+}
+
+@mixin PlayfairItalic {
+  font-family: 'PlayfairItalic';
+}
+
+@mixin PlayfairBold {
+  font-family: 'PlayfairBold';
+}

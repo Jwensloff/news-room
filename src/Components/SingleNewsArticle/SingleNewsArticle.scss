@@ -1,8 +1,52 @@
+@import '../../index.scss';
 
-.news-card{
+.news-card {
+  @include Playfair;
+  background-color: white;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  h3 {
+    margin: 0px;
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px #000;
+    h2 {
+      color: darkblue;
+    }
+  }
 }
 
-.news-img{
-  height: 15rem;
+.top-card-info {
+  h2 {
+    margin-top: 0px;
+    @include PlayfairBold;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+.news-img {
+  width: 15rem;
+  box-sizing: border-box;
+  padding-top: 1rem;
+}
+
+.author-text {
+  @include PlayfairItalic;
+  font-size: 1rem;
+}
+
+.published-text {
+  @include PlayfairBold;
+
+  font-size: 1rem;
 }
