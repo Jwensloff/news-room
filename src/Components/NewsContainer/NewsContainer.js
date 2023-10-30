@@ -1,4 +1,5 @@
 import React from 'react'
+import '../NewsContainer/NewsContainer.scss'
 import SingleNewsArticle from '../SingleNewsArticle/SingleNewsArticle'
 
 function NewsContainer({articles}) {
@@ -18,7 +19,7 @@ function NewsContainer({articles}) {
   })
 
   return (
-    <div>
+    <div className='article-container'>
       {allArticles}
     </div>
   )
