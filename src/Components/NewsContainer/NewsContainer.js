@@ -2,9 +2,22 @@ import React from 'react';
 import '../NewsContainer/NewsContainer.scss';
 import SingleNewsArticle from '../SingleNewsArticle/SingleNewsArticle';
 import { Link } from 'react-router-dom';
+import SearchSort from '../SearchSort/SearchSort';
 
-function NewsContainer({ articles, handleClick }) {
-  let allArticles = articles.map((article) => {
+function NewsContainer({
+  articles,
+  handleClick,
+  keyword,
+  setKeyword,
+  handleSearch,
+  filteredArticles,
+  filter,
+}) {
+  
+  const mappedArticles = filter ? filteredArticles : articles;
+
+  let allArticles = mappedArticles.map((article) => {
+
     return (
       <SingleNewsArticle
         key={article.url}
@@ -19,7 +32,16 @@ function NewsContainer({ articles, handleClick }) {
     );
   });
 
-  return <div className='article-container'>{allArticles}</div>;
+  return (
+    <div className='homepage'>
+      <SearchSort
+        keyword={keyword}
+        setKeyword={setKeyword}
+        handleSearch={handleSearch}
+      />
+      <div className='article-container'>{allArticles}</div>
+    </div>
+  );
 }
 
 export default NewsContainer;
