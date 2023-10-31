@@ -1,16 +1,26 @@
 @import '../../index.scss';
 
 .news-card {
-  @include Playfair;
+  @include openSans;
   background-color: white;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
+
+  h2 {
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+    @include TitleWave;
+    font-size: 1.25rem;
+  }
   h3 {
     margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
   }
   &:hover {
     cursor: pointer;
@@ -21,32 +31,22 @@
   }
 }
 
-.top-card-info {
-  h2 {
-    margin-top: 0px;
-    @include PlayfairBold;
-    margin-bottom: 0.5rem;
-  }
-  h3 {
-    margin-top: 0px;
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-  }
-}
+// .top-card-info {
+// }
 
 .news-img {
-  width: 15rem;
+  width: 25rem;
   box-sizing: border-box;
-  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .author-text {
-  @include PlayfairItalic;
+  @include openSansBoldItalic;
+  font-weight: bold;
   font-size: 1rem;
 }
 
 .published-text {
-  @include PlayfairBold;
-
+  @include openSansItalic;
   font-size: 1rem;
 }

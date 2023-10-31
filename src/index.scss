@@ -1,43 +1,44 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  padding: 0;
 }
 
 @font-face {
-  font-family: 'Playfair';
-  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf')
+  font-family: 'TitleWave';
+  src: url('../src/Assets/Fonts/title_wave/titlewv.ttf') format('woff');
+}
+
+@font-face {
+  font-family: 'openSans';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-Regular.ttf')
     format('woff');
 }
 
 @font-face {
-  font-family: 'PlayfairItalic';
-  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Italic.ttf')
+  font-family: 'openSansItalic';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-Italic.ttf')
     format('woff');
 }
 
 @font-face {
-  font-family: 'PlayfairBold';
-  src: url('../src/Assets/Fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf')
+  font-family: 'openSansBoldItalic';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-BoldItalic.ttf')
     format('woff');
 }
 
-@mixin Playfair {
-  font-family: 'Playfair';
+@mixin TitleWave {
+  font-family: 'TitleWave';
 }
 
-@mixin PlayfairItalic {
-  font-family: 'PlayfairItalic';
+@mixin openSans {
+  font-family: 'openSans';
 }
 
-@mixin PlayfairBold {
-  font-family: 'PlayfairBold';
+@mixin openSansItalic {
+  font-family: 'openSansItalic';
+}
+
+@mixin openSansBoldItalic {
+  font-family: 'openSansBoldItalic';
 }
