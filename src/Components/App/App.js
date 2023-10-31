@@ -4,6 +4,7 @@ import NavBar from '../NavBar/NavBar';
 import { useEffect, useState } from 'react';
 import { getNewsData } from '../../apiCalls';
 import { data } from '../../mockData';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -17,7 +18,9 @@ function App() {
     <div className='App'>
       <NavBar />
       <main className='content'>
-        <NewsContainer articles={articles} />
+        <Routes>
+          <Route path='/' element={<NewsContainer articles={articles} />} />
+        </Routes>
       </main>
     </div>
   );
