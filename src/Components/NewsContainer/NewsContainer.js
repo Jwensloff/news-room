@@ -1,7 +1,6 @@
 import React from 'react';
 import '../NewsContainer/NewsContainer.scss';
 import SingleNewsArticle from '../SingleNewsArticle/SingleNewsArticle';
-import { Link } from 'react-router-dom';
 import SearchSort from '../SearchSort/SearchSort';
 
 function NewsContainer({
@@ -12,12 +11,11 @@ function NewsContainer({
   handleSearch,
   filteredArticles,
   filter,
+  exitSearch,
 }) {
-  
   const mappedArticles = filter ? filteredArticles : articles;
 
   let allArticles = mappedArticles.map((article) => {
-
     return (
       <SingleNewsArticle
         key={article.url}
@@ -38,8 +36,16 @@ function NewsContainer({
         keyword={keyword}
         setKeyword={setKeyword}
         handleSearch={handleSearch}
+        exitSearch={exitSearch}
       />
-      <div className='article-container'>{allArticles}</div>
+      {allArticles.length ? (
+        <div className='article-container'>{allArticles}</div>
+      ) : (
+        <p className='user-msg'>
+          Sorry, we couldn't find anything that included that keyword. Please
+          try agian.
+        </p>
+      )}
     </div>
   );
 }

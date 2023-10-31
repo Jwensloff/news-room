@@ -28,6 +28,11 @@ function App() {
     navigate(`/${title}`);
   };
 
+  const exitSearch = () => {
+    setFilter(false);
+    setFilteredArticles('');
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     console.log('clicked', keyword);
@@ -51,7 +56,6 @@ function App() {
     <div className='App'>
       <NavBar />
       <main className='content'>
-        {/* <SearchSort /> */}
         <Routes>
           <Route
             path='/'
@@ -64,6 +68,7 @@ function App() {
                 handleSearch={handleSearch}
                 filter={filter}
                 filteredArticles={filteredArticles}
+                exitSearch={exitSearch}
               />
             }
           />

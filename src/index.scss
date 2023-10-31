@@ -42,3 +42,25 @@
 @mixin openSansBoldItalic {
   font-family: 'openSansBoldItalic';
 }
+
+@media screen and (max-width: 1000px) {
+  .article-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .article {
+    height: 100%;
+  }
+  .news-img {
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+  .news-img {
+    width: 90%;
+  }
+}

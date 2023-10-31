@@ -13,7 +13,7 @@ function Article({ article }) {
   console.log(formattedDate);
   return (
     <div className='article'>
-      <h1>{title}</h1>
+      <h2>{title}</h2>
       <img src={urlToImage} className='article-img'></img>
       <h3 className='article-author'>Written by: {author}</h3>
       <h3 className='article-published'>{formattedDate}</h3>

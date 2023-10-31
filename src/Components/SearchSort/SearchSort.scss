@@ -1,0 +1,8 @@
+@import '../../index.scss';
+
+.exit-search-btn {
+  margin-right: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
