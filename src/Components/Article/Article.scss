@@ -2,13 +2,30 @@
 
 .article {
   overflow-y: scroll;
-  h3 {
-    @include openSans;
-  }
+  background-color: white;
 }
 
 .article-img {
   width: 60%;
   box-sizing: border-box;
+  margin: 1rem;
+}
+
+.article-author {
+  @include openSansBoldItalic;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.article-published {
+  @include openSansItalic;
+  font-size: 1rem;
+}
+
+.article-content {
+  @include openSans;
+}
+
+span {
   margin: 1rem;
 }
