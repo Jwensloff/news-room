@@ -1,13 +1,44 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'TitleWave';
+  src: url('../src/Assets/Fonts/title_wave/titlewv.ttf') format('woff');
+}
+
+@font-face {
+  font-family: 'openSans';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-Regular.ttf')
+    format('woff');
+}
+
+@font-face {
+  font-family: 'openSansItalic';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-Italic.ttf')
+    format('woff');
+}
+
+@font-face {
+  font-family: 'openSansBoldItalic';
+  src: url('../src/Assets/Fonts/Open_Sans/static/OpenSans-BoldItalic.ttf')
+    format('woff');
+}
+
+@mixin TitleWave {
+  font-family: 'TitleWave';
+}
+
+@mixin openSans {
+  font-family: 'openSans';
+}
+
+@mixin openSansItalic {
+  font-family: 'openSansItalic';
+}
+
+@mixin openSansBoldItalic {
+  font-family: 'openSansBoldItalic';
 }

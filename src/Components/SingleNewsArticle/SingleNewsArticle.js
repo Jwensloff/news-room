@@ -1,5 +1,5 @@
 import React from 'react';
-import '../SingleNewsArticle/SingleNewsArticle.scss'
+import '../SingleNewsArticle/SingleNewsArticle.scss';
 function SingleNewsArticle({
   id,
   title,
@@ -8,13 +8,15 @@ function SingleNewsArticle({
   description,
   published,
 }) {
-  return <div id={id} className='news-card'>
-    <h2>{title}</h2>
-    <h3>{description}</h3>
-    <h3>Written by: {author}</h3>
-    <h3>Published: {published}</h3>
-    <img src={image} className='news-img'></img>
-  </div>;
+  return (
+    <div id={id} className='news-card'>
+      <img src={image} className='news-img'></img>
+      <h2>{title}</h2>
+      <h3 className='author-text'>Written by: {author}</h3>
+      <h3 className='published-text'>Published: {published}</h3>
+      <h3>{description}</h3>
+    </div>
+  );
 }
 
 export default SingleNewsArticle;

@@ -1,0 +1,10 @@
+@import '../../index.scss';
+
+.header {
+  height: 10vh;
+  border-bottom: 1px solid blue;
+}
+
+h1 {
+  @include TitleWave;
+}
