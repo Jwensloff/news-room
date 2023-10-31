@@ -1,0 +1,14 @@
+@import '../../index.scss';
+
+.article {
+  overflow-y: scroll;
+  h3 {
+    @include openSans;
+  }
+}
+
+.article-img {
+  width: 60%;
+  box-sizing: border-box;
+  margin: 1rem;
+}

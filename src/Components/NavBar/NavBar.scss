@@ -8,3 +8,8 @@
 h1 {
   @include TitleWave;
 }
+
+.article-img {
+  width: 65%;
+  margin: 1rem;
+}
