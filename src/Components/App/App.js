@@ -19,17 +19,17 @@ function App() {
 
   useEffect(() => {
     console.log('data', data.articles);
-    setArticles(data.articles)
-    // getNewsData()
-    //   .then((data) => {
-    //     console.log(data);
-    //     setArticles(data.articles);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //     setError('Oops, something went wrong. Please try again later.');
-    //     navigate('/error');
-    //   });
+    // setArticles(data.articles)
+    getNewsData()
+      .then((data) => {
+        console.log(data);
+        setArticles(data.articles);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError('Oops, something went wrong. Please try again later.');
+        navigate('/error');
+      });
   }, []);
 
   const handleClick = (title) => {
