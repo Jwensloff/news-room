@@ -1,0 +1,56 @@
+@import '../../index.scss';
+
+.article {
+  overflow-y: scroll;
+  background-color: white;
+  padding: 1rem;
+}
+
+.article-img {
+  width: 60%;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+
+.article-author {
+  @include openSansBoldItalic;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.article-published {
+  @include openSansItalic;
+  font-size: 1rem;
+}
+
+.article-content {
+  @include openSans;
+}
+
+span {
+  margin: 1rem;
+}
+.home-btn-wrapper{
+  display: flex;
+  justify-content: end;
+}
+
+.home-btn {
+  @include TitleWave;
+  font-size: 1rem;
+  text-decoration: none;
+  height: 2rem;
+  width: 3rem;
+  background-color: lightgrey;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-right: 1rem;
+  &:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: black;
+  }
+}

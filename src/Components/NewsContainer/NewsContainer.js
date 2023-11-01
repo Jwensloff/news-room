@@ -1,9 +1,21 @@
 import React from 'react';
 import '../NewsContainer/NewsContainer.scss';
 import SingleNewsArticle from '../SingleNewsArticle/SingleNewsArticle';
+import SearchSort from '../SearchSort/SearchSort';
 
-function NewsContainer({ articles }) {
-  let allArticles = articles.map((article) => {
+function NewsContainer({
+  articles,
+  handleClick,
+  keyword,
+  setKeyword,
+  handleSearch,
+  filteredArticles,
+  filter,
+  exitSearch,
+}) {
+  const mappedArticles = filter ? filteredArticles : articles;
+
+  let allArticles = mappedArticles.map((article) => {
     return (
       <SingleNewsArticle
         key={article.url}
@@ -13,11 +25,29 @@ function NewsContainer({ articles }) {
         author={article.author}
         description={article.description}
         published={article.publishedAt}
+        handleClick={handleClick}
       />
     );
   });
 
-  return <div className='article-container'>{allArticles}</div>;
+  return (
+    <div className='homepage'>
+      <SearchSort
+        keyword={keyword}
+        setKeyword={setKeyword}
+        handleSearch={handleSearch}
+        exitSearch={exitSearch}
+      />
+      {allArticles.length ? (
+        <div className='article-container'>{allArticles}</div>
+      ) : (
+        <p className='user-msg'>
+          Sorry, we couldn't find anything that included that keyword. Please
+          try agian.
+        </p>
+      )}
+    </div>
+  );
 }
 
 export default NewsContainer;

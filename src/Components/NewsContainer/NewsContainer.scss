@@ -1,9 +1,18 @@
-.article-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-gap: 15px; 
-  padding: 1rem;
+@import '../../index.scss';
+
+.homepage {
   width: 95%;
   height: 100%;
   overflow-y: scroll;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  padding: 1rem;
+}
+
+.user-msg {
+  margin: 1rem;
 }

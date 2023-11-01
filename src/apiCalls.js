@@ -10,11 +10,5 @@ export const getNewsData = () => {
     }
     return response.json(); // Assuming the response is in JSON format
   })
-  .then(data => {
-    // Process the data here
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+
 };
