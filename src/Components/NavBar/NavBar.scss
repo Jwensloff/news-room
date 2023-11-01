@@ -17,33 +17,3 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
-.home-btn {
-  position: absolute;
-  align-self: center;
-  right: 1rem;
-  @include TitleWave;
-  font-size: 1rem;
-  text-decoration: none;
-  height: 3rem;
-  width: 5rem;
-  background-color: lightsteelblue;
-  margin-left: 1rem;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-
-  &:hover {
-    cursor: pointer;
-    background-color: lightgray;
-    color: black;
-  }
-}
-
-.active {
-  background-color: none;
-}
-
-

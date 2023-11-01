@@ -2,7 +2,7 @@ import './App.scss';
 import NewsContainer from '../NewsContainer/NewsContainer';
 import NavBar from '../NavBar/NavBar';
 import Article from '../Article/Article';
-import SearchSort from '../SearchSort/SearchSort';
+import ErrorPage from '../ErrorPage/ErrorPage';
 import { useEffect, useState } from 'react';
 import { getNewsData } from '../../apiCalls';
 import { data } from '../../mockData';
@@ -14,18 +14,29 @@ function App() {
   const [keyword, setKeyword] = useState('');
   const [filter, setFilter] = useState(false);
   const [filteredArticles, setFilteredArticles] = useState([]);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
   useEffect(() => {
     console.log('data', data.articles);
-    setArticles(data.articles);
+    setArticles(data.articles)
+    // getNewsData()
+    //   .then((data) => {
+    //     console.log(data);
+    //     setArticles(data.articles);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //     setError('Oops, something went wrong. Please try again later.');
+    //     navigate('/error');
+    //   });
   }, []);
-
-  const navigate = useNavigate();
 
   const handleClick = (title) => {
     console.log('clicked', title);
     const filteredArticle = articles.find((article) => article.title === title);
     setArticle(filteredArticle);
-    navigate(`/${title}`);
+    navigate(`/article/${title}`);
   };
 
   const exitSearch = () => {
@@ -38,12 +49,12 @@ function App() {
     console.log('clicked', keyword);
     setFilter(true);
     const filteredArticles = articles.filter((article) => {
-      let editedKeyword = keyword?.toLowerCase().trim();
+      let editedKeyword = keyword && keyword.toLowerCase().trim();
       if (
-        article.title.toLowerCase().includes(editedKeyword) ||
-        article.author.toLowerCase().includes(editedKeyword) ||
-        article.description.toLowerCase().includes(editedKeyword) ||
-        article.content.toLowerCase().includes(editedKeyword)
+        article.title?.toLowerCase().includes(editedKeyword) ||
+        article.author?.toLowerCase().includes(editedKeyword) ||
+        article.description?.toLowerCase().includes(editedKeyword) ||
+        article.content?.toLowerCase().includes(editedKeyword)
       ) {
         return article;
       }
@@ -72,7 +83,19 @@ function App() {
               />
             }
           />
-          <Route path='/:title' element={<Article article={article} />} />
+          <Route
+            path='/article/:title'
+            element={<Article article={article} />}
+          />
+          <Route
+            path='error'
+            element={<ErrorPage error={error} setError={setError} />}
+          />
+
+          <Route
+            path='*'
+            element={<ErrorPage error={error} setError={setError} />}
+          />
         </Routes>
       </main>
     </div>

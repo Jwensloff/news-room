@@ -4,13 +4,14 @@ import React from 'react';
 function SearchSort({ keyword, setKeyword, handleSearch, exitSearch }) {
   return (
     <div>
-      <form>
+      <form className='form'>
         {keyword && (
           <button onClick={() => exitSearch()} className='exit-search-btn'>
             {keyword} X
           </button>
         )}
         <input
+        className='search-input'
           type='text'
           id='keyword'
           name='keyword'
@@ -21,7 +22,7 @@ function SearchSort({ keyword, setKeyword, handleSearch, exitSearch }) {
             handleSearch(e);
           }}
         ></input>
-        <button onClick={(e) => handleSearch(e)}>Search</button>
+        <button className='search-btn' onClick={(e) => handleSearch(e)}>Search</button>
       </form>
     </div>
   );

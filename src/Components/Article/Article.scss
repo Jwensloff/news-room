@@ -30,3 +30,27 @@
 span {
   margin: 1rem;
 }
+.home-btn-wrapper{
+  display: flex;
+  justify-content: end;
+}
+
+.home-btn {
+  @include TitleWave;
+  font-size: 1rem;
+  text-decoration: none;
+  height: 2rem;
+  width: 3rem;
+  background-color: lightgrey;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-right: 1rem;
+  &:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: black;
+  }
+}
