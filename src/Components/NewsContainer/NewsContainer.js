@@ -26,6 +26,7 @@ function NewsContainer({
         description={article.description}
         published={article.publishedAt}
         handleClick={handleClick}
+        url={article.url}
       />
     );
   });

@@ -18,22 +18,19 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('data', data.articles);
-    // setArticles(data.articles)
-    getNewsData()
-      .then((data) => {
-        console.log(data);
-        setArticles(data.articles);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-        setError('Oops, something went wrong. Please try again later.');
-        navigate('/error');
-      });
+    setArticles(data.articles)
+    // getNewsData()
+    //   .then((data) => {
+    //     setArticles(data.articles);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error:', error);
+    //     setError('Oops, something went wrong. Please try again later.');
+    //     navigate('/error');
+    //   });
   }, []);
 
   const handleClick = (title) => {
-    console.log('clicked', title);
     const filteredArticle = articles.find((article) => article.title === title);
     setArticle(filteredArticle);
     navigate(`/article/${title}`);
@@ -46,7 +43,6 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log('clicked', keyword);
     setFilter(true);
     const filteredArticles = articles.filter((article) => {
       let editedKeyword = keyword && keyword.toLowerCase().trim();
@@ -59,7 +55,6 @@ function App() {
         return article;
       }
     });
-    console.log(filteredArticles);
     setFilteredArticles(filteredArticles);
   };
 
