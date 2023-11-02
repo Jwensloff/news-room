@@ -21,6 +21,7 @@ function App() {
     // setArticles(data.articles)
     getNewsData()
       .then((data) => {
+        console.log(data)
         setArticles(data.articles);
       })
       .catch((error) => {
@@ -44,7 +45,7 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     setFilter(true);
-    const filteredArticles = articles.filter((article) => {
+    const filteredArticles = articles?.filter((article) => {
       let editedKeyword = keyword && keyword.toLowerCase().trim();
       if (
         article.title?.toLowerCase().includes(editedKeyword) ||
