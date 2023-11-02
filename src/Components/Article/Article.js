@@ -5,7 +5,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 
 function Article({ article }) {
-  const { id, title, urlToImage, author, content, publishedAt } = article;
+  const { id, title, urlToImage, author, content, publishedAt, url } = article;
   const navigate = useNavigate();
   const originalDate = publishedAt;
   const formattedDate = dayjs(originalDate).format('MMMM D, YYYY, h:mm A');
@@ -14,7 +14,6 @@ function Article({ article }) {
     navigate('/');
   };
 
-  console.log(formattedDate);
   return (
     <div className='article'>
       <div className='home-btn-wrapper'>
@@ -29,6 +28,10 @@ function Article({ article }) {
       <h3 className='article-published'>{formattedDate}</h3>
       <span></span>
       <h3 className='article-content'>{content}</h3>
+      <div className='link-wrapper'>
+        <h3>See the whole article</h3>
+        <a href={url}>here!</a>
+      </div>
     </div>
   );
 }

@@ -46,21 +46,62 @@
 @media screen and (max-width: 1000px) {
   .article-container {
     grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hompage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .article {
     height: 100%;
   }
+
   .news-img {
     width: 20rem;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 675px) {
+  .App{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .content{
+    max-width: 90%;
+    overflow-x: hidden;
+
+  }
+  .hompage {
+    width: 10%;
+    overflow-x: hidden;
+
+  }
+
+  .article-container {
+    max-width: 100%;
+    overflow-x: hidden;
+
+  }
+
+  .news-card {
+    max-width: 100%;
+    height: auto;
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
   .header {
     justify-content: flex-start;
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
+
   .news-img {
-    width: 90%;
+    max-width: 90%;
   }
 }

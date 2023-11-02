@@ -10,6 +10,7 @@ function SingleNewsArticle({
   description,
   published,
   handleClick,
+  url,
 }) {
   const originalDate = published;
   const formattedDate = dayjs(originalDate).format('MMMM D, YYYY, h:mm A');

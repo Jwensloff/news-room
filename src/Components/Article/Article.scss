@@ -30,7 +30,7 @@
 span {
   margin: 1rem;
 }
-.home-btn-wrapper{
+.home-btn-wrapper {
   display: flex;
   justify-content: end;
 }
@@ -52,5 +52,16 @@ span {
     cursor: pointer;
     background-color: gray;
     color: black;
+  }
+}
+.link-wrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include openSansBoldItalic;
+  font-size: 1rem;
+  a{
+    margin-left: 5px;
   }
 }
