@@ -15,7 +15,7 @@ function NewsContainer({
 }) {
   const mappedArticles = filter ? filteredArticles : articles;
 
-  let allArticles = mappedArticles.map((article) => {
+  let allArticles = mappedArticles?.map((article) => {
     return (
       <SingleNewsArticle
         key={article.url}
@@ -39,7 +39,7 @@ function NewsContainer({
         handleSearch={handleSearch}
         exitSearch={exitSearch}
       />
-      {allArticles.length ? (
+      {allArticles?.length ? (
         <div className='article-container'>{allArticles}</div>
       ) : (
         <p className='user-msg'>

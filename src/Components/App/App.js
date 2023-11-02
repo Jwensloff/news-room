@@ -5,7 +5,7 @@ import Article from '../Article/Article';
 import ErrorPage from '../ErrorPage/ErrorPage';
 import { useEffect, useState } from 'react';
 import { getNewsData } from '../../apiCalls';
-import { data } from '../../mockData';
+// import { data } from '../../../cypress/fixtures/mockData';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function App() {
@@ -18,16 +18,16 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setArticles(data.articles)
-    // getNewsData()
-    //   .then((data) => {
-    //     setArticles(data.articles);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //     setError('Oops, something went wrong. Please try again later.');
-    //     navigate('/error');
-    //   });
+    // setArticles(data.articles)
+    getNewsData()
+      .then((data) => {
+        setArticles(data.articles);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setError('Oops, something went wrong. Please try again later.');
+        navigate('/error');
+      });
   }, []);
 
   const handleClick = (title) => {
