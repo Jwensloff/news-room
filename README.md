@@ -22,6 +22,11 @@ Are you tired of your standard news outlets? Well look no further, with news roo
 ## 💡 Learning Goals and Objectives
 The goal for this project is to create a React app within about 8 hours in order to 'mock' an interview technical challenge. We had to include a way to manipulate the data being displayed, and had to implement Router to have a unique url when an article was clicked. 
 
+## 🏆 Wins & Challenges: 
+- The biggest challenge was not being sure about how I wanted the application to look. In hindsight, it would have been helpful to create a wireframe like I do on bigger projects. 
+
+- A win was how quickly the app came together. I felt confident in my ability to add the functionality I wanted to add. 
+
 ## To see the app in Action: 
 
 1. Clone down [this](https://github.com/Jwensloff/news-room) repository. 
