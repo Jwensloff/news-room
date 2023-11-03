@@ -1,8 +1,9 @@
 import './Article.scss';
 import { useNavigate } from 'react-router-dom';
-
 import React from 'react';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
+
 
 function Article({ article }) {
   const { id, title, urlToImage, author, content, publishedAt, url } = article;
@@ -36,3 +37,15 @@ function Article({ article }) {
   );
 }
 export default Article;
+
+Article.propTypes = {
+  article: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired, 
+    title: PropTypes.string.isRequired, 
+    urlToImage: PropTypes.string.isRequired, 
+    author: PropTypes.string.isRequired, 
+    content: PropTypes.string.isRequired, 
+    publishedAt: PropTypes.string.isRequired, 
+    url: PropTypes.string.isRequired,
+  }))
+}
