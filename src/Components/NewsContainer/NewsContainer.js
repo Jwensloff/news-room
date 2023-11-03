@@ -1,21 +1,22 @@
-import React from 'react';
 import '../NewsContainer/NewsContainer.scss';
+import React from 'react';
 import SingleNewsArticle from '../SingleNewsArticle/SingleNewsArticle';
 import SearchSort from '../SearchSort/SearchSort';
+import PropTypes from 'prop-types';
 
 function NewsContainer({
   articles,
+  filteredArticles,
   handleClick,
   keyword,
   setKeyword,
   handleSearch,
-  filteredArticles,
   filter,
   exitSearch,
 }) {
   const mappedArticles = filter ? filteredArticles : articles;
 
-  let allArticles = mappedArticles.map((article) => {
+  let allArticles = mappedArticles?.map((article) => {
     return (
       <SingleNewsArticle
         key={article.url}
@@ -25,8 +26,8 @@ function NewsContainer({
         author={article.author}
         description={article.description}
         published={article.publishedAt}
-        handleClick={handleClick}
         url={article.url}
+        handleClick={handleClick}
       />
     );
   });
@@ -39,7 +40,7 @@ function NewsContainer({
         handleSearch={handleSearch}
         exitSearch={exitSearch}
       />
-      {allArticles.length ? (
+      {allArticles?.length ? (
         <div className='article-container'>{allArticles}</div>
       ) : (
         <p className='user-msg'>
@@ -52,3 +53,36 @@ function NewsContainer({
 }
 
 export default NewsContainer;
+
+NewsContainer.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      urlToImage: PropTypes.string,
+      author: PropTypes.string,
+      content: PropTypes.string,
+      publishedAt: PropTypes.string,
+      url: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+  filteredArticles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      title: PropTypes.string,
+      urlToImage: PropTypes.string,
+      author: PropTypes.string,
+      content: PropTypes.string,
+      publishedAt: PropTypes.string,
+      url: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+  handleClick: PropTypes.func.isRequired,
+  keyword: PropTypes.string.isRequired,
+  setKeyword: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,
+  filter: PropTypes.bool.isRequired,
+  exitSearch: PropTypes.func.isRequired,
+};

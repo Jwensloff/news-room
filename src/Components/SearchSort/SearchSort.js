@@ -1,5 +1,6 @@
 import './SearchSort.scss'
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function SearchSort({ keyword, setKeyword, handleSearch, exitSearch }) {
   return (
@@ -29,3 +30,10 @@ function SearchSort({ keyword, setKeyword, handleSearch, exitSearch }) {
 }
 
 export default SearchSort;
+
+SearchSort.prototypes = {
+  keyword: PropTypes.string.isRequired, 
+  setKeyword: PropTypes.func.isRequired, 
+  handleSearch: PropTypes.func.isRequired, 
+  exitSearch: PropTypes.bool.isRequired,
+}

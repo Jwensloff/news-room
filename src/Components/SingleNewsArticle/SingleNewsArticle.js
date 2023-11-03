@@ -1,6 +1,7 @@
 import React from 'react';
 import '../SingleNewsArticle/SingleNewsArticle.scss';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
 
 function SingleNewsArticle({
   id,
@@ -10,7 +11,6 @@ function SingleNewsArticle({
   description,
   published,
   handleClick,
-  url,
 }) {
   const originalDate = published;
   const formattedDate = dayjs(originalDate).format('MMMM D, YYYY, h:mm A');
@@ -27,3 +27,16 @@ function SingleNewsArticle({
 }
 
 export default SingleNewsArticle;
+
+SingleNewsArticle.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  published: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  published: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
+};

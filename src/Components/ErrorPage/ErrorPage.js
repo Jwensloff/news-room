@@ -1,7 +1,8 @@
 import './ErrorPage.scss'
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 
 function ErrorPage({ error, setError }) {
   const navigate = useNavigate();
@@ -27,3 +28,8 @@ function ErrorPage({ error, setError }) {
 }
 
 export default ErrorPage;
+
+ErrorPage.propTypes = {
+    error: PropTypes.string, 
+    setError: PropTypes.func, 
+}
